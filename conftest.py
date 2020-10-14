@@ -11,7 +11,8 @@ def app(request):
   with open(os.path.join(os.path.dirname(__file__), 'config.json')) as config_file:
     config  = json.load(config_file)
   if fixture is None:
-    fixture = Application(browser="firefox", base_url = config['baseUrl'])
+    fixture = Application(browser= "firefox", base_url = config['baseUrl'])
+    fixture.session.login(username=config["username"], password=config["password"])
   request.addfinalizer(fixture.destroy)
   return fixture
 

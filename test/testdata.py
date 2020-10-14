@@ -7,5 +7,6 @@ def random_string(prefix, maxlen):
     return prefix + ''.join([random.choice(symbols) for i in range(random.randrange(maxlen))])
 
 email_body = random_string("text", 20) + ' ' + random_string("text", 20)
-test_data = Letter(email_to="ellina.martyn@gmail.com", email_subject = random_string("subject", 10), email_body = email_body)
+test_data = [Letter(email_to="ellina.martyn@gmail.com", email_subject = random_string("subject", 10), email_body = email_body),
+            Letter(email_to="ellina.martyn@gmail.com", email_subject = random_string("subject", 10), email_body = '')]
 
